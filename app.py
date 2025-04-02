@@ -142,6 +142,18 @@ time.sleep(5)
 pa.hotkey("ctrl", "shift", "v")
 time.sleep(60)
 
+# sair do perfil do chrome
+pa.click(1894,11,duration=1)
+time.sleep(5)
+
+# salvar e fechar planilha
+pa.doubleClick(30,19,duration=1) # salvar planilha
+time.sleep(2)
+pa.click(1887,16, duration=1) # fechar planilha
+time.sleep(2)
+pa.click(883,552,duration=1)
+time.sleep(5)
+
 # Exibir mensagem ao finalizar
 def mostrar_mensagem():
     root = tk.Tk()
