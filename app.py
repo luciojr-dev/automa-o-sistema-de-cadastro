@@ -7,6 +7,7 @@ import re
 import subprocess
 import tkinter as tk
 from tkinter import messagebox
+import pygetwindow as gw
 
 # 1° PARTE - ABRIR E CONECTAR USUARIO SIS
 pa.FAILSAFE = False
@@ -128,9 +129,20 @@ time.sleep(5)
 pa.hotkey("win","r")
 time.sleep(1)
 pa.press("enter")
-time.sleep(5)
-pa.doubleClick(1261,145, duration=1)
-time.sleep(5)
+time.sleep(5)  
+
+timeout = 15  # segundos
+start_time = time.time()
+
+while time.time() - start_time < timeout:
+    windows = gw.getWindowsWithTitle('Google Chrome')
+    if windows:
+        chrome_window = windows[0]
+        chrome_window.activate()
+        chrome_window.moveTo(0, 0)
+        chrome_window.maximize() # deixa o chrome em tela cheia
+        break
+    time.sleep(1)
 
 # Clica no sheets na barra de favoritos
 pa.click(127,105, duration=1)
