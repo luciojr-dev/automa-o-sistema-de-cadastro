@@ -153,7 +153,7 @@ pa.click(95,273, duration=1)
 pa.hotkey("ctrl", "shift", "v")
 time.sleep(5)
 pa.hotkey("ctrl", "shift", "v")
-time.sleep(60)
+time.sleep(180)
 
 # sair do perfil do chrome
 pa.click(1894,11,duration=1)
